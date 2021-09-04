@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import AppContainer from "containers/App";
 import MomentContainer from "containers/MomentContainer";
 import { theme } from "style/theme";
-import { store, persistor } from "store";
+import { store } from "store";
 import Viewport from "containers/ViewPort";
 
 function App() {

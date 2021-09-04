@@ -1,37 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Container from "@material-ui/core/Container";
+
 import MobileScreen from "../MobileScreen";
+import style from "./style.scss";
 
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
-
-const getPageHeight = () => {
-  let body = document.body,
-    html = document.documentElement;
-
-  return (
-    Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight
-    ) - body.offsetHeight
-  );
-};
-export const useAutoScrollToTop = (rest) => {
-  const {
-    match: { url },
-    autoScrollToTop = true,
-  } = rest;
-  // HACK:  scroll new page  to top after change url
-  React.useEffect(() => {
-    if (autoScrollToTop) {
-      scrollToTop();
-    }
-  }, [url]);
-};
 const LayoutEmpty = ({
   myPermissionsSelector,
   children,
@@ -43,17 +16,6 @@ const LayoutEmpty = ({
   ...rest
 }) => {
   const { isMobile } = viewPort;
-  const {
-    history,
-    match: { path },
-    route: {
-      roleKey,
-      showHeader = true,
-      showFooter = true,
-      showScrollToTop = false,
-    },
-    location: { pathname, search },
-  } = rest;
 
   const [isEndOfPage, setEndOfPage] = React.useState(false);
   const restWithPermissons = {
@@ -64,7 +26,9 @@ const LayoutEmpty = ({
   };
 
   return !isMobile ? (
-    <div>{React.createElement(children, restWithPermissons)}</div>
+    <Container maxWidth="md" classes={{ root: style.root }}>
+      {React.createElement(children, restWithPermissons)}
+    </Container>
   ) : (
     <MobileScreen />
   );
