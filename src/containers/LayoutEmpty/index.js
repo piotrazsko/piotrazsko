@@ -26,7 +26,7 @@ const LayoutEmpty = ({
   };
 
   return !isMobile ? (
-    <Container maxWidth="md" classes={{ root: style.root }}>
+    <Container maxWidth="lg" classes={{ root: style.root }}>
       {React.createElement(children, restWithPermissons)}
     </Container>
   ) : (

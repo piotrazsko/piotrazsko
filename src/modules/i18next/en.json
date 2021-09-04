@@ -1,4 +1,13 @@
 {
   "user_name": "Petrashka Siarhei",
-  "user_position": "Senior web developer"
+  "user_position": "Senior frontend developer",
+  "name": "Name",
+  "birthdate": "Birthday",
+  "user_birth_date": "27 january 1988",
+  "job": "Job",
+  "email": "Email",
+  "linkedin": "Linkedin",
+  "user_job": "Senior frontend developer",
+  "user_email": "piotrazsko@gmail.com",
+  "user_linkedin": "linkedin"
 }
