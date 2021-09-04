@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { Profile } from "components";
+import { Profile, Header } from "components";
 
 const Home = ({ aaaa }) => {
   return (
@@ -11,7 +11,7 @@ const Home = ({ aaaa }) => {
         <Profile />
       </Grid>
       <Grid item md={8} lg={9}>
-        <header></header>
+        <Header />
         <Grid container>
           <Grid item xs={12}>
             <Paper />

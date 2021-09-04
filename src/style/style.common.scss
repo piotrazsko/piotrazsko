@@ -3,7 +3,7 @@ body {
   background: #fafafa;
   overflow-x: hidden;
   position: relative;
-  background-image: url("../assets/images/bg.png");
+  background-image: url("../assets/images/bg.png") !important;
   color: #333;
 }
 ::before,

@@ -45,22 +45,47 @@ export const theme = createMuiTheme({
     subtitle2: {},
   },
   overrides: {
+    MuiTab: {
+      root: {
+        padding: "0px 10px",
+        minWidth: "0px !important",
+        color: "#000",
+      },
+      textColorPrimary: {
+        color: "#000",
+        fontSize: "14px",
+        fontWeight: "bold",
+      },
+      // wrapper: {
+      //   // color: "#000",
+      // },
+    },
     MuiButton: {
       root: {
         textTransform: "capitalize",
         borderRadius: "50px",
+        height: "37px",
       },
+      contained: {
+        boxShadow: "none",
+      },
+      label: { fontSize: "14px" },
     },
     MuiPaper: {
       root: {
         borderRadius: "6px",
-        minHeight: "150px",
+        minHeight: "20px",
       },
       rounded: {
         borderRadius: "6px",
       },
       elevation1: {
         boxShadow: "0px 2px 92px 0px rgba(0, 0, 0, 0.07)",
+      },
+    },
+    PrivateTabIndicator: {
+      root: {
+        display: "none",
       },
     },
   },

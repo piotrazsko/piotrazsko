@@ -10,5 +10,10 @@
   "user_job": "Senior frontend developer",
   "user_email": "piotrazsko@gmail.com",
   "user_linkedin": "linkedin",
-  "button_download_cv": "Download Cv "
+  "button_download_cv": "Download Cv",
+  "button_hire_me": "Hire Me",
+  "tab_resume": "RESUME",
+  "tab_portfolio": "PORTFOLIO",
+  "tab_blog": "BLOG",
+  "tab_contact": "CONTACT"
 }
