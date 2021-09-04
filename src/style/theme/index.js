@@ -45,6 +45,12 @@ export const theme = createMuiTheme({
     subtitle2: {},
   },
   overrides: {
+    MuiButton: {
+      root: {
+        textTransform: "capitalize",
+        borderRadius: "50px",
+      },
+    },
     MuiPaper: {
       root: {
         borderRadius: "6px",

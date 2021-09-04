@@ -5,6 +5,7 @@ import style from "./style.scss";
 import { useTranslation } from "react-i18next";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 import List from "../List";
 import userImage from "../../assets/images/user_image.jpg";
 
@@ -27,6 +28,11 @@ const Profile = ({ ...props }) => {
         <img className={style.image} src={userImage}></img>
       </Box>
       <List items={items} />
+      <div className={style.buttonContainer}>
+        <Button variant="contained" color="primary" className={style.download}>
+          {t("button_download_cv")}
+        </Button>
+      </div>
     </Paper>
   );
 };

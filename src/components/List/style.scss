@@ -18,8 +18,8 @@
       position: relative;
       &::before {
         color: #000;
-        background: #ffc500;
-        border-color: #ffc500;
+        background: $primary;
+        border-color: $primary;
         margin-left: -51px;
         margin-top: -30px;
         margin-bottom: 20px;
@@ -44,6 +44,7 @@
       line-height: 12px;
       span {
         color: #000;
+        margin-right: 5px;
       }
     }
 
