@@ -44,13 +44,18 @@ export const theme = createTheme({
       padding: "0",
     },
     h3: { fontSize: "17px", fontWeight: "bold", textTransform: "uppercase" },
-    h4: {},
+    h4: { fontSize: "14px", fontWeight: "500" },
     body1: {
       "font-size": "13px",
       color: "#4c4c4c",
       "line-height": "24px",
     },
-    body2: {},
+    body2: {
+      "font-size": "13px",
+      color: "#989898",
+      fontWeight: "400",
+      "line-height": "18px",
+    },
     subtitle1: {
       fontSize: "13px",
       color: "#777",

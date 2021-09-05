@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
 import { useTranslation } from "react-i18next";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
