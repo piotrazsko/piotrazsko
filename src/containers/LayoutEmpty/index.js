@@ -3,10 +3,17 @@ import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 
 import MobileScreen from "../MobileScreen";
-import style from "./style.scss";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { Profile, Header } from "components";
+
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: "60px",
+  },
+}));
 
 const LayoutEmpty = ({
   myPermissionsSelector,
@@ -15,9 +22,9 @@ const LayoutEmpty = ({
   userIsMaster,
   currentUserData,
   currentLocalization,
-  classes = {},
   ...rest
 }) => {
+  const classes = useStyles();
   const { isMobile } = viewPort;
 
   const [isEndOfPage, setEndOfPage] = React.useState(false);
@@ -29,7 +36,7 @@ const LayoutEmpty = ({
   };
 
   return !isMobile ? (
-    <Container maxWidth="lg" classes={{ root: style.root }}>
+    <Container maxWidth="lg" classes={{ root: classes.root }}>
       <Grid container spacing={2}>
         <Grid item md={4} lg={3}>
           <Profile />
