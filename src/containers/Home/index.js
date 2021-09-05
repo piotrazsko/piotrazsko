@@ -19,8 +19,9 @@ const Home = ({ ...props }) => {
     { title: "NodeJs", percent: 50 },
     { title: "Git", percent: 75 },
     { title: "Sass", percent: 85 },
-    { title: "Html", percent: 85 },
-    { title: "Css", percent: 85 },
+    { title: "Less", percent: 85 },
+    { title: "HTML", percent: 85 },
+    { title: "CSS", percent: 85 },
   ];
   return (
     <>
@@ -28,7 +29,7 @@ const Home = ({ ...props }) => {
         <Typography variant="body1">{t("user_about_me")}</Typography>
       </Pane>
       <Pane grey title={t("my_services")}>
-        <Grid container spacing={6}>
+        <Grid container spacing={2} justifyContent="space-around">
           <Grid item xs={3}>
             <ServiceCard icon={faLaptopCode} title={t("web_development")}>
               {t("card_web_development")}
@@ -36,17 +37,12 @@ const Home = ({ ...props }) => {
           </Grid>
           <Grid item xs={3}>
             <ServiceCard icon={faApple} title={t("mobile_development")}>
-              {t("card_web_development")}
+              {t("card_mobile_development")}
             </ServiceCard>
           </Grid>
           <Grid item xs={3}>
             <ServiceCard icon={faNodeJs} title={t("backend_development")}>
-              {t("card_web_development")}
-            </ServiceCard>
-          </Grid>
-          <Grid item xs={3}>
-            <ServiceCard icon={faLaptopCode} title={t("web_development")}>
-              {t("card_web_development")}
+              {t("card_backend_development")}
             </ServiceCard>
           </Grid>
         </Grid>

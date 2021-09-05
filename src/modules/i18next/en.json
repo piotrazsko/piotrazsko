@@ -23,5 +23,7 @@
   "web_development": "Web Development",
   "mobile_development": "Mobile Development",
   "backend_development": "Backend Prototyping",
-  "card_web_development": "I have been working on web design for 10 years."
+  "card_web_development": "Creating fast applications with extensible architecture",
+  "card_mobile_development": "Creating mobile applications for IOs and Androind",
+  "card_backend_development": " Prototyping the backend environment in NodeJs "
 }

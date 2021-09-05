@@ -87,7 +87,10 @@
     "start": "node --max_old_space_size=4096  scripts/start.js",
     "build": "node --max_old_space_size=8192  scripts/build.js &&  cp -R ./build/  ./docs",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "version:patch": "yarn build && git add . && yarn patch",
+    "version:feature": "yarn build && git add . && yarn feature",
+    "version:release": "yarn build && git add . && yarn release"
   },
   "eslintConfig": {
     "extends": [
