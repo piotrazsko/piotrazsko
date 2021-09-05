@@ -10,10 +10,8 @@ const Home = ({ ...props }) => {
   const [page, setPage] = React.useState();
   return (
     <>
-      <Pane title={t("about_me")}>{t("user_about_me")}</Pane>
-      <Pane grey title={t("my_services")}>
-        test
-      </Pane>
+      <Pane title={t("about_me")}>test</Pane>
+      <Pane title={t("my_services")}>test</Pane>
       <Pane title={t("skills")}>test</Pane>
     </>
   );

@@ -10,11 +10,12 @@ const breakpoints = createBreakpoints({});
 const transitionName = "cubic-bezier(0.7, 0, 0.25, 1)";
 const marginTransition = `margin 0.5s ${transitionName}`;
 const labelFontSize = 18;
+const main = "#ffb100";
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#ffb100",
+      main: main,
     },
     secondary: {
       main: "#000",
@@ -34,6 +35,14 @@ export const theme = createMuiTheme({
     fontWeight: 500,
     fontFamily: "Roboto",
     fontColor: "#333",
+    h2: {
+      fontSize: "18px",
+      fontWeight: "600",
+      borderBottom: `7px solid ${main}`,
+      display: "inline",
+      boxSizing: "border-box",
+      padding: "0",
+    },
     h3: { fontSize: "17px", fontWeight: "bold", textTransform: "uppercase" },
     h4: {},
     body1: {},

@@ -4,6 +4,9 @@ import Container from "@material-ui/core/Container";
 
 import MobileScreen from "../MobileScreen";
 import style from "./style.scss";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import { Profile, Header } from "components";
 
 const LayoutEmpty = ({
   myPermissionsSelector,
@@ -27,7 +30,19 @@ const LayoutEmpty = ({
 
   return !isMobile ? (
     <Container maxWidth="lg" classes={{ root: style.root }}>
-      {React.createElement(children, restWithPermissons)}
+      <Grid container spacing={2}>
+        <Grid item md={4} lg={3}>
+          <Profile />
+        </Grid>
+        <Grid item md={8} lg={9}>
+          <Header {...restWithPermissons} />
+          <Grid container>
+            <Grid item xs={12}>
+              <Paper>{React.createElement(children, restWithPermissons)}</Paper>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </Container>
   ) : (
     <MobileScreen />
