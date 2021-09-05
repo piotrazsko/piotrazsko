@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 const bigestFontSize = 36;
 const majorFontSize = 20;
@@ -12,7 +12,7 @@ const marginTransition = `margin 0.5s ${transitionName}`;
 const labelFontSize = 18;
 const main = "#ffb100";
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: main,
@@ -45,7 +45,11 @@ export const theme = createMuiTheme({
     },
     h3: { fontSize: "17px", fontWeight: "bold", textTransform: "uppercase" },
     h4: {},
-    body1: {},
+    body1: {
+      "font-size": "13px",
+      color: "#4c4c4c",
+      "line-height": "24px",
+    },
     body2: {},
     subtitle1: {
       fontSize: "13px",

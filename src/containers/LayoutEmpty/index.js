@@ -50,15 +50,13 @@ const LayoutEmpty = ({
 };
 
 LayoutEmpty.propTypes = {
-  classes: PropTypes.object.isRequired,
   viewPort: PropTypes.shape({ isMobile: PropTypes.bool.isRequired }).isRequired,
   children: PropTypes.oneOfType([
     PropTypes.element,
+    PropTypes.any,
     PropTypes.arrayOf(PropTypes.element),
   ]),
   myPermissionsSelector: PropTypes.object,
-  userIsMaster: PropTypes.bool.isRequired,
-  currentUserData: PropTypes.object.isRequired,
   currentLocalization: PropTypes.string,
 };
 

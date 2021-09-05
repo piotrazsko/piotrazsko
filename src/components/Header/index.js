@@ -11,18 +11,22 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import style from "./style.scss";
 
-const Header = ({ selectedItem, onSelect }) => {
-  const [value, setValue] = React.useState(0);
-
+const Header = ({
+  selectedItem,
+  onSelect,
+  history,
+  route: { path },
+  ...props
+}) => {
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    history.push(newValue);
   };
 
   const { t } = useTranslation();
   return (
     <Paper className={style.container}>
       <Tabs
-        value={value}
+        value={path}
         onChange={handleChange}
         indicatorColor="primary"
         textColor="primary"
@@ -31,11 +35,12 @@ const Header = ({ selectedItem, onSelect }) => {
           classes={{ root: style.firstTab, labelIcon: style.labelIconFirst }}
           icon={<FontAwesomeIcon className={style.homeIcon} icon={faHome} />}
           label={""}
+          value="/"
         />
-        <Tab label={t("tab_resume")} />
+        <Tab value="/resume" label={t("tab_resume")} />
         <Tab label={t("tab_portfolio")} />
         <Tab label={t("tab_blog")} />
-        <Tab label={t("tab_contact")} />
+        <Tab value="/contacts" label={t("tab_contact")} />
       </Tabs>
       <Button variant="contained" color="primary">
         {t("button_hire_me")}

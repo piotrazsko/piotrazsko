@@ -1,4 +1,4 @@
-import { Home } from "containers";
+import { Home, Resume, Contacts } from "containers";
 
 export const redirectAuthPath = "/auth";
 
@@ -10,6 +10,24 @@ const mainRoutes = [
     path: "/",
     exact: true,
     component: Home,
+    isPrivate: true,
+    showHeader: true,
+    header: true,
+    // layout: Tutorial,
+  },
+  {
+    path: "/resume",
+    exact: true,
+    component: Resume,
+    isPrivate: true,
+    showHeader: true,
+    header: true,
+    // layout: Tutorial,
+  },
+  {
+    path: "/contacts",
+    exact: true,
+    component: Contacts,
     isPrivate: true,
     showHeader: true,
     header: true,
