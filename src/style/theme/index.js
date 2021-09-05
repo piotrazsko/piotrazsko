@@ -10,7 +10,7 @@ const breakpoints = createBreakpoints({});
 const transitionName = "cubic-bezier(0.7, 0, 0.25, 1)";
 const marginTransition = `margin 0.5s ${transitionName}`;
 const labelFontSize = 18;
-const main = "#ffb100";
+const main = "#ffb500";
 
 export const theme = createTheme({
   palette: {
@@ -45,6 +45,7 @@ export const theme = createTheme({
     },
     h3: { fontSize: "17px", fontWeight: "bold", textTransform: "uppercase" },
     h4: { fontSize: "14px", fontWeight: "500" },
+    h5: { fontSize: "12px", fontWeight: "500" },
     body1: {
       "font-size": "13px",
       color: "#4c4c4c",
