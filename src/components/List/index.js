@@ -1,37 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
-
-import style from "./style.scss";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    borderBottom: "none",
-  },
-  firstLi: {
-    display: "flex",
-    "padding-bottom": "10px",
-    "padding-left": "30px",
-    position: "relative",
-  },
-}));
+import { useStyles } from "./style";
 
 const List = ({ items, title }) => {
   const classes = useStyles();
   return (
-    <ul className={style.ul}>
-      <li className={classes.firstLi}>
+    <ul className={classes.ul}>
+      <li className={[classes.li, classes.firstLi].join(" ")}>
         <Typography variant="h2" classes={{ root: classes.root }}>
           {title}
         </Typography>
       </li>
       {items.map((i, index) => (
-        <li key={index}>
-          <p>
-            <span>{i.title}:</span>
-            {i.text}
-          </p>
+        <li
+          className={[
+            classes.li,
+            index === items.length - 1 ? classes.lastLi : "",
+          ].join(" ")}
+          key={index}
+        >
+          <span className={classes.title}>{i.title}:</span>
+          <span className={classes.content}>{i.text}:</span>
         </li>
       ))}
     </ul>
