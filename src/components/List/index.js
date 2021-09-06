@@ -1,11 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
-import style from "./style.scss";
+import Typography from "@material-ui/core/Typography";
 
-const List = ({ items }) => {
+import style from "./style.scss";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    borderBottom: "none",
+  },
+  firstLi: {
+    display: "flex",
+    "padding-bottom": "10px",
+    "padding-left": "30px",
+    position: "relative",
+  },
+}));
+
+const List = ({ items, title }) => {
+  const classes = useStyles();
   return (
     <ul className={style.ul}>
-      <li></li>
+      <li className={classes.firstLi}>
+        <Typography variant="h2" classes={{ root: classes.root }}>
+          {title}
+        </Typography>
+      </li>
       {items.map((i, index) => (
         <li key={index}>
           <p>

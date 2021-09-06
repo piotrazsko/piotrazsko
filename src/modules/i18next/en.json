@@ -15,7 +15,7 @@
   "tab_resume": "RESUME",
   "tab_portfolio": "PORTFOLIO",
   "tab_blog": "BLOG",
-  "tab_contact": "CONTACT",
+  "tab_contact": "CONTACTS",
   "about_me": "About Me",
   "my_services": "My Services",
   "skills": "Skills",
@@ -25,5 +25,10 @@
   "backend_development": "Backend Prototyping",
   "card_web_development": "Creating fast applications with extensible architecture",
   "card_mobile_development": "Creating mobile applications for IOs and Androind",
-  "card_backend_development": " Prototyping the backend environment in NodeJs "
+  "card_backend_development": " Prototyping the backend environment in NodeJs ",
+  "resume": "Resume",
+  "clients": "Clients",
+  "testimonials": "Testimonials",
+  "resume_working": "Working History",
+  "resume_education": "Education History"
 }
