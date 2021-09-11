@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import { Pane, ContactsItem, Map } from "components";
-
 import { useTranslation } from "react-i18next";
 const contacts = (t) => [
   { title: t("address"), text: t("user_address"), type: "text", value: null },

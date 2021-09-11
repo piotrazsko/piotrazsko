@@ -36,7 +36,7 @@ const Header = ({
           value="/"
         />
         <Tab value="/resume" label={t("tab_resume")} />
-        <Tab label={t("tab_portfolio")} />
+        <Tab value="/portfolio" label={t("tab_portfolio")} />
         <Tab value="/contacts" label={t("tab_contact")} />
       </Tabs>
       <Button variant="contained" color="primary">
