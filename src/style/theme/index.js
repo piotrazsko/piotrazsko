@@ -61,7 +61,11 @@ export const theme = createTheme({
       fontSize: "13px",
       color: "#777",
     },
-    subtitle2: {},
+    subtitle2: {
+      fontSize: "14px",
+      color: "#000",
+      fontWeight: "400",
+    },
   },
   overrides: {
     MuiTab: {
