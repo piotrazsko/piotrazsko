@@ -3,7 +3,7 @@
   "user_position": "Senior frontend developer",
   "name": "Name",
   "birthdate": "Birthday",
-  "user_birth_date": "27 january 1988",
+  "user_birth_date": "27 January 1988",
   "job": "Job",
   "email": "Email",
   "linkedin": "Linkedin",
@@ -30,5 +30,12 @@
   "clients": "Clients",
   "testimonials": "Testimonials",
   "resume_working": "Working History",
-  "resume_education": "Education History"
+  "resume_education": "Education History",
+  "contact_form": "Contact Form",
+  "contact_information": "Contact Informations",
+  "contact_map": "Contact Map",
+
+  "position_0": "Art Director - Facebook Inc",
+  "position_0_dates": "2010-Present",
+  "position_0_extend": "Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor."
 }

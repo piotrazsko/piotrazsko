@@ -2,6 +2,12 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme) => ({
   root: {
     borderBottom: "none",
+    fontSize: "18px",
+    fontWeight: 500,
+    marginLeft: "25px",
+    lineHeight: "30px",
+    color: "#000",
+    marginTop: "-22px",
   },
   ul: {
     listStyle: "none",
@@ -66,5 +72,10 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "13.5px",
     color: "#7f7f7f",
     lineHeight: "12px",
+  },
+  dates: {
+    fontSize: 12,
+    padding: "9px 0",
+    color: "#000",
   },
 }));

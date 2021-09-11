@@ -44,7 +44,7 @@ export const theme = createTheme({
       padding: "0",
     },
     h3: { fontSize: "17px", fontWeight: "bold", textTransform: "uppercase" },
-    h4: { fontSize: "14px", fontWeight: "500" },
+    h4: { fontSize: "14px", fontWeight: "500", color: "#000" },
     h5: { fontSize: "12px", fontWeight: "500" },
     body1: {
       "font-size": "13px",

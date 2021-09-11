@@ -27,7 +27,7 @@ const Profile = ({ ...props }) => {
       <Box component="figure" className={style.profileImageFigure}>
         <img className={style.image} src={userImage}></img>
       </Box>
-      <List items={items} />
+      <List showDates={false} items={items} />
       <div className={style.buttonContainer}>
         <Button variant="contained" color="primary" className={style.download}>
           {t("button_download_cv")}

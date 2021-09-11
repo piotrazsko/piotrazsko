@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import { useStyles } from "./style";
 
-const List = ({ items, title }) => {
+const List = ({ items, showDates = true, title }) => {
   const classes = useStyles();
   return (
     <ul className={classes.ul}>
@@ -20,8 +20,13 @@ const List = ({ items, title }) => {
           ].join(" ")}
           key={index}
         >
-          <span className={classes.title}>{i.title}:</span>
-          <span className={classes.content}>{i.text}:</span>
+          {showDates ? (
+            <Typography variant="h4">{i.title}</Typography>
+          ) : (
+            <span className={classes.title}>{i.title}</span>
+          )}
+          {showDates ? <p className={classes.dates}>{i.dates}</p> : null}
+          <span className={classes.content}>{i.text}</span>
         </li>
       ))}
     </ul>
@@ -29,7 +34,13 @@ const List = ({ items, title }) => {
 };
 
 List.propTypes = {
-  // : PropTypes.
+  items: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    dates: PropTypes.string,
+  }).isRequired,
+  titls: PropTypes.string,
+  showDates: PropTypes.bool,
 };
 
 export default List;
