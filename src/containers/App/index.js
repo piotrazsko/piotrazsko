@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
-import { Routing } from "containers";
 import routes, { redirectAuthPath } from "routes";
+
+import { Routing } from "containers";
+import "modules/i18next";
+
 import "../../style/style.common.scss";
 import "../../assets/fonts/stylesheet.css";
-import "modules/i18next";
+
 const App = ({ ...props }) => {
   return (
     <Fragment>

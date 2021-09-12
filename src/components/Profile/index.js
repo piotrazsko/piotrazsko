@@ -7,7 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import List from "../List";
-import userImage from "../../assets/images/user_image.jpg";
+import userImage from "assets/images/user_image.jpg";
+import userImageWebp from "assets/images/user_image.webp";
 
 const Profile = ({ ...props }) => {
   const { t } = useTranslation();
@@ -18,6 +19,7 @@ const Profile = ({ ...props }) => {
     { title: t("email"), text: t("user_email") },
     { title: t("linkedin"), text: t("user_linkedin") },
   ];
+
   return (
     <Paper className={style.profile}>
       <Box className={style.profileName}>
@@ -25,7 +27,11 @@ const Profile = ({ ...props }) => {
         <Typography variant="subtitle1">{t("user_position")}</Typography>
       </Box>
       <Box component="figure" className={style.profileImageFigure}>
-        <img className={style.image} src={userImage}></img>
+        <picture>
+          <source srcset={userImageWebp} type="image/webp"></source>
+          <source srcset={userImage} type="image/jpeg"></source>
+          <img className={style.image} src={userImage} alt="user portrait" />
+        </picture>
       </Box>
       <List showDates={false} items={items} />
       <div className={style.buttonContainer}>
