@@ -8,7 +8,11 @@ import { faMapMarkerAlt, faMobile } from "@fortawesome/free-solid-svg-icons";
 
 export const useStyles = makeStyles((theme) => ({
   root: { minHeight: "50vh", width: "100%" },
-  marker: { color: theme.palette.primary.main },
+  marker: {
+    color: theme.palette.primary.main,
+    top: "-10px",
+    position: "relative",
+  },
 }));
 const AnyReactComponent = ({ text }) => {
   const classes = useStyles();
@@ -36,7 +40,7 @@ const Map = ({ data }) => {
           yesIWantToUseGoogleMapApiInternals
           // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         >
-          <AnyReactComponent {...center} text="My Marker" />
+          <AnyReactComponent {...center} />
         </GoogleMap>
       </Grid>
     </Grid>
