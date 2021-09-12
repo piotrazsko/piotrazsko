@@ -30,7 +30,7 @@ const Map = ({ data }) => {
     <Grid container>
       <Grid item classes={{ item: classes.root }}>
         <GoogleMap
-          // bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+          bootstrapURLKeys={{ key: "AIzaSyC6pCapfNqKT-ZZI2HUMFMxZy5Imst757s" }}
           defaultCenter={center}
           defaultZoom={zoom}
           yesIWantToUseGoogleMapApiInternals
