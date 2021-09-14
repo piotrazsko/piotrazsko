@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme) => ({
   root: { minHeight: "50vh", width: "100%" },
   marker: {
     color: theme.palette.primary.main,
-    top: "-10px",
+    top: "-25px",
     position: "relative",
   },
 }));
