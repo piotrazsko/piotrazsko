@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
-
+import { Helmet } from "react-helmet";
 import MobileScreen from "../MobileScreen";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { Profile, Header } from "components";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const LayoutEmpty = ({
   currentLocalization,
   ...rest
 }) => {
+  const { t } = useTranslation();
   const classes = useStyles();
   const { isMobile } = viewPort;
 
@@ -35,24 +37,33 @@ const LayoutEmpty = ({
     ...rest,
   };
 
-  return !isMobile ? (
-    <Container maxWidth="lg" classes={{ root: classes.root }}>
-      <Grid container spacing={2}>
-        <Grid item md={4} lg={3}>
-          <Profile />
-        </Grid>
-        <Grid item md={8} lg={9}>
-          <Header {...restWithPermissons} />
-          <Grid container>
-            <Grid item xs={12}>
-              <Paper>{React.createElement(children, restWithPermissons)}</Paper>
+  return (
+    <>
+      <Helmet>
+        <title>{t("user_name")}</title>
+      </Helmet>
+      {!isMobile ? (
+        <Container maxWidth="lg" classes={{ root: classes.root }}>
+          <Grid container spacing={2}>
+            <Grid item md={4} lg={3}>
+              <Profile />
+            </Grid>
+            <Grid item md={8} lg={9}>
+              <Header {...restWithPermissons} />
+              <Grid container>
+                <Grid item xs={12}>
+                  <Paper>
+                    {React.createElement(children, restWithPermissons)}
+                  </Paper>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Grid>
-    </Container>
-  ) : (
-    <MobileScreen />
+        </Container>
+      ) : (
+        <MobileScreen />
+      )}
+    </>
   );
 };
 
