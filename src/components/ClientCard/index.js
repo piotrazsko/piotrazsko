@@ -11,14 +11,15 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px",
     boxShadow: "0px 0px 48px 0px rgba(4, 6, 4, 0.08)",
     minHeight: "186px",
+    minWidth: "190px",
     height: "100%",
   },
 
   icon: { width: "45px !important", height: "45px" },
   title: { marginTop: "10px" },
   content: { marginTop: "10px" },
-  image: { width: "150px" },
-  imageContainer: { height: "100%" },
+  image: { width: "110px" },
+  imageContainer: { height: "100%", padding: "20px" },
 }));
 // or
 
@@ -34,7 +35,12 @@ const ClientCard = ({ image, title, children }) => {
       >
         <Grid item>
           <picture>
-            <img className={classes.image} src={image} alt="client icon" />
+            <img
+              intrinsicsize
+              className={classes.image}
+              src={image}
+              alt="client icon"
+            />
           </picture>
         </Grid>
       </Grid>
