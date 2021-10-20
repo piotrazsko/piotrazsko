@@ -13,11 +13,11 @@ import userImageWebp from "assets/images/user_image.webp";
 const Profile = ({ ...props }) => {
   const { t } = useTranslation();
   const items = [
-    { title: t("name"), text: t("user_name") },
-    { title: t("birthdate"), text: t("user_birth_date") },
-    { title: t("job"), text: t("user_job") },
-    { title: t("email"), text: t("user_email") },
-    { title: t("linkedin"), text: t("user_linkedin") },
+    { title: `${t("name")}:`, text: t("user_name") },
+    { title: `${t("birthdate")}:`, text: t("user_birth_date") },
+    { title: `${t("job")}:`, text: t("user_job") },
+    { title: `${t("email")}:`, text: t("user_email") },
+    { title: `${t("linkedin")}:`, text: t("user_linkedin") },
   ];
 
   return (
