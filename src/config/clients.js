@@ -6,6 +6,6 @@ import feelqueen from "assets/images/feelqueen.svg";
 export const clients = [
   { image: spritecs },
   { image: rednavis },
-  { image: calcam },
   { image: feelqueen, title: "Feelqueen" },
+  { image: calcam },
 ];

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   icon: { width: "45px !important", height: "45px" },
-  title: { marginTop: "10px" },
+  title: { marginTop: "-25px", textAlign: "center", fontSize: "20px" },
   content: { marginTop: "10px" },
   image: { width: "110px" },
   imageContainer: { height: "100%", padding: "20px" },
