@@ -49,8 +49,10 @@ const Profile = ({ ...props }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/pdf",
       },
-      body: JSON.stringify({ url: "https://piotrazsko.github.io" }),
+      // body: JSON.stringify({ url: "http://localhost:3000/" }),
+      body: JSON.stringify({ url: "https://piotrazsko.github.io/" }),
     };
     //   // TODO: need get  filename from  content-disposition
     fetchApi({
