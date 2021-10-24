@@ -32,5 +32,5 @@
   "backend_development": "Backend Prototyping",
   "card_web_development": "Creating fast applications with extensible architecture",
   "card_mobile_development": "Creating mobile applications for IOs and Androind",
-  "card_backend_development": " Prototyping the backend environment in NodeJs"
+  "card_backend_development": "Prototyping the backend environment in NodeJs"
 }

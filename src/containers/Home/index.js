@@ -7,7 +7,9 @@ import { faNodeJs, faApple } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
 import { Pane, ServiceCard, SkillItem } from "components";
 
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 const Home = ({ ...props }) => {
+  const matchesPrint = useMediaQuery("print");
   const { t } = useTranslation();
   const skills = [
     { title: "JavaScript", percent: 90 },
@@ -28,25 +30,27 @@ const Home = ({ ...props }) => {
       <Pane title={t("about_me")}>
         <Typography variant="body1">{t("user_about_me")}</Typography>
       </Pane>
-      <Pane grey title={t("my_services")}>
-        <Grid container spacing={2} justifyContent="space-around">
-          <Grid item xs={3}>
-            <ServiceCard icon={faLaptopCode} title={t("web_development")}>
-              {t("card_web_development")}
-            </ServiceCard>
+      {!matchesPrint && (
+        <Pane grey title={t("my_services")}>
+          <Grid container spacing={2} justifyContent="space-around">
+            <Grid item xs={3}>
+              <ServiceCard icon={faLaptopCode} title={t("web_development")}>
+                {t("card_web_development")}
+              </ServiceCard>
+            </Grid>
+            <Grid item xs={3}>
+              <ServiceCard icon={faApple} title={t("mobile_development")}>
+                {t("card_mobile_development")}
+              </ServiceCard>
+            </Grid>
+            <Grid item xs={3}>
+              <ServiceCard icon={faNodeJs} title={t("backend_development")}>
+                {t("card_backend_development")}
+              </ServiceCard>
+            </Grid>
           </Grid>
-          <Grid item xs={3}>
-            <ServiceCard icon={faApple} title={t("mobile_development")}>
-              {t("card_mobile_development")}
-            </ServiceCard>
-          </Grid>
-          <Grid item xs={3}>
-            <ServiceCard icon={faNodeJs} title={t("backend_development")}>
-              {t("card_backend_development")}
-            </ServiceCard>
-          </Grid>
-        </Grid>
-      </Pane>
+        </Pane>
+      )}
       <Pane title={t("skills")}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
