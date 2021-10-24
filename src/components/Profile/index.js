@@ -10,6 +10,20 @@ import List from "../List";
 import userImage from "assets/images/user_image.jpg";
 import userImageWebp from "assets/images/user_image.webp";
 
+export const fetchApi = ({ url, headers, ...options }) => {
+  return fetch(url, {
+    method: "GET",
+    headers: {
+      "X-Api-App-Http-Host": "http://localhost:3000/",
+      Accept: "application/json, text/plain, */*",
+      // Authorization: `Bearer ${api_token()}`,
+      ...headers,
+    },
+    responseType: "blob", // used for get files
+    ...options,
+  });
+};
+
 const Profile = ({ ...props }) => {
   const { t } = useTranslation();
   const items = [
@@ -19,6 +33,34 @@ const Profile = ({ ...props }) => {
     { title: `${t("email")}:`, text: t("user_email") },
     { title: `${t("linkedin")}:`, text: t("user_linkedin") },
   ];
+
+  const downloadBlob = (blob, filename) => {
+    const url = URL.createObjectURL(blob);
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+  };
+
+  const onDownload = () => {
+    //   const onChangeState = (status) => {
+    const ajaxOptions = {
+      url: "http://localhost:3001/pdf",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ url: "https://piotrazsko.github.io" }),
+    };
+    //   // TODO: need get  filename from  content-disposition
+    fetchApi({
+      ...ajaxOptions,
+    }).then((data) => {
+      data.blob().then((blob) => {
+        downloadBlob(blob, `petrashka.siarhei.cv.pdf`);
+      });
+    });
+  };
 
   return (
     <Paper className={style.profile}>
@@ -35,7 +77,12 @@ const Profile = ({ ...props }) => {
       </Box>
       <List showDates={false} items={items} />
       <div className={style.buttonContainer}>
-        <Button variant="contained" color="primary" className={style.download}>
+        <Button
+          variant="contained"
+          color="primary"
+          className={style.download}
+          onClick={onDownload}
+        >
           {t("button_download_cv")}
         </Button>
       </div>

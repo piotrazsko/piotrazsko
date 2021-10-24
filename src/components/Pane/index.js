@@ -24,7 +24,7 @@ const Pane = ({ title, children, verticalOffset = 0, grey = false }) => {
       container
       classes={{ root: classes.container }}
       className={grey ? classes.grey : ""}
-      style={{ marginTop: "20px" }}
+      // style={{ marginTop: "20px" }}
     >
       <Grid item xs={12}>
         <Typography variant="h2">{title}</Typography>

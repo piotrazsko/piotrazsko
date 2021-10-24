@@ -6,7 +6,7 @@ import MobileScreen from "../MobileScreen";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { Profile, Header } from "components";
-
+import { Home, Resume, Contacts, Portfolio } from "containers";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 
@@ -42,27 +42,30 @@ const LayoutEmpty = ({
       <Helmet>
         <title>{t("user_name")}</title>
       </Helmet>
-      {!isMobile ? (
-        <Container maxWidth="lg" classes={{ root: classes.root }}>
-          <Grid container spacing={2}>
-            <Grid item md={4} lg={3}>
-              <Profile />
-            </Grid>
-            <Grid item md={8} lg={9}>
-              <Header {...restWithPermissons} />
-              <Grid container>
-                <Grid item xs={12}>
-                  <Paper>
-                    {React.createElement(children, restWithPermissons)}
-                  </Paper>
-                </Grid>
+      {/* {!isMobile ? ( */}
+      <Container maxWidth="lg" classes={{ root: classes.root }}>
+        <Grid container spacing={2}>
+          <Grid item md={4} lg={3}>
+            <Profile />
+          </Grid>
+          <Grid item md={8} lg={9}>
+            {/* <Header {...restWithPermissons} /> */}
+            <Grid container>
+              <Grid item xs={12}>
+                <Paper>
+                  {/* {React.createElement(children, restWithPermissons)} */}
+                  <Home {...restWithPermissons} />
+                  <Resume {...restWithPermissons} />
+                  <Contacts {...restWithPermissons} />
+                </Paper>
               </Grid>
             </Grid>
           </Grid>
-        </Container>
-      ) : (
+        </Grid>
+      </Container>
+      {/* ) : (
         <MobileScreen />
-      )}
+      )} */}
     </>
   );
 };
