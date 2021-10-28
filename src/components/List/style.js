@@ -71,7 +71,7 @@ export const useStyles = makeStyles((theme) => ({
   content: {
     fontSize: "15px",
     color: "#7f7f7f",
-    lineHeight: "12px",
+    lineHeight: "20px",
   },
   dates: {
     fontSize: 16,

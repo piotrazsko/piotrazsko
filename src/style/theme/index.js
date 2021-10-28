@@ -1,15 +1,5 @@
 import { createTheme } from "@material-ui/core/styles";
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-const bigestFontSize = 36;
-const majorFontSize = 20;
-const largeFontSize = 18;
-const mediumFontSize = 16;
-const normalFontSize = 14;
-const smallFontSize = 12;
-const breakpoints = createBreakpoints({});
-const transitionName = "cubic-bezier(0.7, 0, 0.25, 1)";
-const marginTransition = `margin 0.5s ${transitionName}`;
-const labelFontSize = 18;
+
 const main = "#ffb500";
 
 export const theme = createTheme({
