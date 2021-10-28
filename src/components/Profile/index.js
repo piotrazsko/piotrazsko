@@ -51,8 +51,10 @@ const Profile = ({ ...props }) => {
         "Content-Type": "application/json",
         Accept: "application/pdf",
       },
-      // body: JSON.stringify({ url: "http://localhost:3000/" }),
-      body: JSON.stringify({ url: "https://piotrazsko.github.io/" }),
+      body:
+        process.env.NODE_ENV == "development"
+          ? JSON.stringify({ url: "http://localhost:3000/" })
+          : JSON.stringify({ url: "https://piotrazsko.github.io/" }),
     };
     //   // TODO: need get  filename from  content-disposition
     fetchApi({

@@ -39,7 +39,7 @@ export const theme = createTheme({
     body1: {
       "font-size": "18px",
       color: "#4c4c4c",
-      "line-height": "24px",
+      "line-height": "1.7",
     },
     body2: {
       "font-size": "16px",

@@ -10,7 +10,7 @@ const Resume = ({ history, ...props }) => {
   const { t } = useTranslation();
   return (
     <>
-      <Pane verticalOffset={26} title={t("resume")}>
+      <Pane verticalOffset={35} title={t("resume")}>
         <Grid container>
           <Grid item xs={6}>
             <Box>
