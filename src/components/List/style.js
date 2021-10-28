@@ -69,12 +69,12 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "5px",
   },
   content: {
-    fontSize: "13.5px",
+    fontSize: "15px",
     color: "#7f7f7f",
     lineHeight: "12px",
   },
   dates: {
-    fontSize: 12,
+    fontSize: 16,
     padding: "9px 0",
     color: "#000",
   },

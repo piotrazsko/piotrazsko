@@ -6,7 +6,7 @@ import MobileScreen from "../MobileScreen";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { Profile, Header } from "components";
-import { Home, Resume, Contacts, Portfolio } from "containers";
+import { Home } from "containers";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 
@@ -53,10 +53,7 @@ const LayoutEmpty = ({
             <Grid container>
               <Grid item xs={12}>
                 <Paper>
-                  {/* {React.createElement(children, restWithPermissons)} */}
                   <Home {...restWithPermissons} />
-                  <Resume {...restWithPermissons} />
-                  <Contacts {...restWithPermissons} />
                 </Paper>
               </Grid>
             </Grid>
