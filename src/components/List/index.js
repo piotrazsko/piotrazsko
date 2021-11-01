@@ -26,7 +26,8 @@ const List = ({ items, showDates = true, title }) => {
             <span className={classes.title}>{i.title}</span>
           )}
           {showDates ? <p className={classes.dates}>{i.dates}</p> : null}
-          <span className={classes.content}>{i.text}</span>
+          {i.text ? <span className={classes.content}>{i.text}</span> : null}
+          {i.link ? <a href={i.link.value}>{i.link.label}</a> : null}
         </li>
       ))}
     </ul>

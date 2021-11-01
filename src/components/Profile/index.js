@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import List from "../List";
 import userImage from "assets/images/user_image.jpg";
 import userImageWebp from "assets/images/user_image.webp";
+import contacts from "../../config/contacts.json";
 
 export const fetchApi = ({ url, headers, ...options }) => {
   return fetch(url, {
@@ -30,8 +31,12 @@ const Profile = ({ ...props }) => {
     { title: `${t("name")}:`, text: t("user_name") },
     { title: `${t("birthdate")}:`, text: t("user_birth_date") },
     { title: `${t("job")}:`, text: t("user_job") },
-    { title: `${t("email")}:`, text: t("user_email") },
-    { title: `${t("linkedin")}:`, text: t("user_linkedin") },
+    { title: `${t("email")}:`, link: contacts.user_email },
+    { title: `${t("linkedin")}:`, link: contacts.user_linkedin },
+    { title: `${t("github")}:`, link: contacts.user_github },
+    { title: `${t("stackoverflow")}:`, link: contacts.user_stackoverflow },
+    { title: `${t("phone")}:`, link: contacts.user_phone },
+    { title: `${t("address")}:`, text: t("user_address") },
   ];
 
   const downloadBlob = (blob, filename) => {

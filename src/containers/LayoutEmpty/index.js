@@ -45,10 +45,10 @@ const LayoutEmpty = ({
       {/* {!isMobile ? ( */}
       <Container maxWidth="lg" classes={{ root: classes.root }}>
         <Grid container spacing={2}>
-          <Grid item md={4} lg={3}>
+          <Grid item md={3} lg={3}>
             <Profile />
           </Grid>
-          <Grid item md={8} lg={9}>
+          <Grid item md={9} lg={9}>
             {/* <Header {...restWithPermissons} /> */}
             <Grid container>
               <Grid item xs={12}>

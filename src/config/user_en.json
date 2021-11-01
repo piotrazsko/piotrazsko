@@ -1,11 +1,5 @@
 {
-  "user_phone": "+375257226609",
-  "user_email": "piotrazsko@gmail.com",
-  "user_linkedin": "",
-  "user_facebook": "",
-  "user_github": "",
   "user_address": "Minsk,  Karolinskaya st. 14/13",
-  "user_stacoveflow": "",
   "user_job": "Senior frontend developer",
   "user_birth_date": "27 January 1988",
   "user_name": "Petrashka Siarhei",
@@ -42,5 +36,5 @@
 
   "position_5": "Front-End Enginee - Calkam",
   "position_5_dates": "2021 - Present",
-  "position_5_extend": "Development of mobile applications.\nImplementation of Firebase tools in applications. (Notifications, Realtime Database, etc.).\nSSR web applications development.\nBackend prototyping."
+  "position_5_extend": "Development of mobile applications.\nImplementation of Firebase tools to applications. (Notifications, Realtime Database, etc.).\nSSR web applications development.\nBackend prototyping."
 }
