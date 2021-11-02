@@ -62,6 +62,10 @@ const Profile = ({ isPDF = true, ...props }) => {
           process.env.NODE_ENV == "development"
             ? "http://localhost:3001"
             : "http://46.101.168.74:3001",
+        "X-Api-App-Http-Host":
+          process.env.NODE_ENV == "development"
+            ? "http://localhost:3001"
+            : "http://46.101.168.74:3001",
       },
       body:
         process.env.NODE_ENV == "development"
