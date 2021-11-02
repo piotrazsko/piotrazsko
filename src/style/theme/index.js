@@ -1,9 +1,14 @@
 import { createTheme } from "@material-ui/core/styles";
 
 const main = "#ffb500";
+// const main = "#70c700";
+// const main = "#ff0000";
+// const main = "#ffde00";
+// const main = "#0069ff";
 
 export const theme = createTheme({
   palette: {
+    mode: "light",
     primary: {
       main: main,
     },
@@ -79,6 +84,7 @@ export const theme = createTheme({
         borderRadius: "50px",
         height: "37px",
       },
+
       contained: {
         boxShadow: "none",
       },
