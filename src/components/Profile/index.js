@@ -58,7 +58,7 @@ const Profile = ({ isPDF = true, ...props }) => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/pdf",
-        origin:
+        Origin:
           process.env.NODE_ENV == "development"
             ? "http://localhost:3001"
             : "http://46.101.168.74:3001",
