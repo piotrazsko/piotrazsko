@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import List from "../List";
 import userImage from "assets/images/user_image.jpg";
 import userImageWebp from "assets/images/user_image.webp";
@@ -38,8 +39,9 @@ const Profile = ({ isPDF = true, ...props }) => {
     { title: `${t("phone")}:`, link: contacts.user_phone },
     { title: `${t("address")}:`, text: t("user_address") },
   ];
-
+  const [showLoader, swithcLoader] = React.useState(false);
   const downloadBlob = (blob, filename) => {
+    swithcLoader(false);
     const url = URL.createObjectURL(blob);
     var link = document.createElement("a");
     link.href = url;
@@ -48,6 +50,7 @@ const Profile = ({ isPDF = true, ...props }) => {
   };
 
   const onDownload = () => {
+    swithcLoader(true);
     //   const onChangeState = (status) => {
     const ajaxOptions = {
       url:
@@ -104,6 +107,13 @@ const Profile = ({ isPDF = true, ...props }) => {
             color="primary"
             className={style.download}
             onClick={onDownload}
+            loading
+            loadingPosition="start"
+            endIcon={
+              showLoader ? (
+                <CircularProgress size={23} color={"secondary"} />
+              ) : null
+            }
           >
             {t("button_download_cv")}
           </Button>
