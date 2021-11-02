@@ -26,7 +26,7 @@ export const useStyles = makeStyles((theme) => ({
       borderRadius: "50px",
       fontSize: "8px",
       marginLeft: "-25px",
-      marginTop: "2px",
+      marginTop: "8px",
       fontWeight: "400",
       background: "#fff",
       display: "block",
@@ -37,7 +37,7 @@ export const useStyles = makeStyles((theme) => ({
   lastLi: {
     border: "0",
     marginLeft: "2px",
-    marginTop: "-2px",
+    marginTop: "-8px",
   },
   firstLi: {
     display: "flex",
@@ -72,6 +72,7 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     color: "#7f7f7f",
     lineHeight: "1.6",
+    whiteSpace: "break-spaces",
   },
   dates: {
     fontSize: 16,

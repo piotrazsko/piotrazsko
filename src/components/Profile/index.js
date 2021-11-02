@@ -25,7 +25,7 @@ export const fetchApi = ({ url, headers, ...options }) => {
   });
 };
 
-const Profile = ({ ...props }) => {
+const Profile = ({ isPDF = true, ...props }) => {
   const { t } = useTranslation();
   const items = [
     { title: `${t("name")}:`, text: t("user_name") },
@@ -50,7 +50,10 @@ const Profile = ({ ...props }) => {
   const onDownload = () => {
     //   const onChangeState = (status) => {
     const ajaxOptions = {
-      url: "http://localhost:3001/pdf",
+      url:
+        process.env.NODE_ENV == "development"
+          ? "http://localhost:3001/pdf"
+          : "http://46.101.168.74/pdf",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,8 +61,8 @@ const Profile = ({ ...props }) => {
       },
       body:
         process.env.NODE_ENV == "development"
-          ? JSON.stringify({ url: "http://localhost:3000/" })
-          : JSON.stringify({ url: "https://piotrazsko.github.io/" }),
+          ? JSON.stringify({ url: "http://localhost:3000/pdf" })
+          : JSON.stringify({ url: "https://piotrazsko.github.io/pdf" }),
     };
     //   // TODO: need get  filename from  content-disposition
     fetchApi({
@@ -85,16 +88,19 @@ const Profile = ({ ...props }) => {
         </picture>
       </Box>
       <List showDates={false} items={items} />
-      <div className={style.buttonContainer}>
-        <Button
-          variant="contained"
-          color="primary"
-          className={style.download}
-          onClick={onDownload}
-        >
-          {t("button_download_cv")}
-        </Button>
-      </div>
+      {!isPDF ? (
+        <div className={style.buttonContainer}>
+          <Button
+            size="large"
+            variant="contained"
+            color="primary"
+            className={style.download}
+            onClick={onDownload}
+          >
+            {t("button_download_cv")}
+          </Button>
+        </div>
+      ) : null}
     </Paper>
   );
 };

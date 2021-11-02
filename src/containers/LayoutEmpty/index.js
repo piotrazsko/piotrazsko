@@ -33,10 +33,10 @@ const LayoutEmpty = ({
   const restWithPermissons = {
     viewPort,
     isEndOfPage,
+    children,
     currentLocalization,
     ...rest,
   };
-
   return (
     <>
       <Helmet>
@@ -45,15 +45,22 @@ const LayoutEmpty = ({
       {/* {!isMobile ? ( */}
       <Container maxWidth="lg" classes={{ root: classes.root }}>
         <Grid container spacing={2}>
-          <Grid item md={3} lg={3}>
-            <Profile />
-          </Grid>
-          <Grid item md={9} lg={9}>
-            {/* <Header {...restWithPermissons} /> */}
+          {restWithPermissons.route.showProfile ? (
+            <Grid item md={3} lg={3}>
+              <Profile isPDF={false} />
+            </Grid>
+          ) : (
+            false
+          )}
+          <Grid
+            item
+            md={restWithPermissons.route.showProfile ? 9 : 12}
+            lg={restWithPermissons.route.showProfile ? 9 : 12}
+          >
             <Grid container>
               <Grid item xs={12}>
                 <Paper>
-                  <Home {...restWithPermissons} />
+                  {React.createElement(children, restWithPermissons)}
                 </Paper>
               </Grid>
             </Grid>
