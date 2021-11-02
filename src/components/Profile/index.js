@@ -53,7 +53,7 @@ const Profile = ({ isPDF = true, ...props }) => {
       url:
         process.env.NODE_ENV == "development"
           ? "http://localhost:3001/pdf"
-          : "http://46.101.168.74:3001/pdf",
+          : "https://api.goman.live/pdf",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,11 +61,11 @@ const Profile = ({ isPDF = true, ...props }) => {
         Origin:
           process.env.NODE_ENV == "development"
             ? "http://localhost:3001"
-            : "http://46.101.168.74:3001",
+            : "https://api.goman.live",
         "X-Api-App-Http-Host":
           process.env.NODE_ENV == "development"
             ? "http://localhost:3001"
-            : "http://46.101.168.74:3001",
+            : "https://api.goman.live",
       },
       body:
         process.env.NODE_ENV == "development"
