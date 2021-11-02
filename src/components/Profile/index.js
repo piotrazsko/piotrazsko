@@ -53,11 +53,15 @@ const Profile = ({ isPDF = true, ...props }) => {
       url:
         process.env.NODE_ENV == "development"
           ? "http://localhost:3001/pdf"
-          : "http://46.101.168.74/pdf",
+          : "http://46.101.168.74:3001/pdf",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/pdf",
+        origin:
+          process.env.NODE_ENV == "development"
+            ? "http://localhost:3001"
+            : "http://46.101.168.74:3001",
       },
       body:
         process.env.NODE_ENV == "development"
