@@ -9,6 +9,7 @@ import { Pane, ServiceCard, SkillItem, ClientCard } from "components";
 import { Resume, Contacts } from "containers";
 import { clients } from "config/clients.js";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Hidden from "@material-ui/core/Hidden";
 
 const Home = ({ ...props }) => {
   const matchesPrint = useMediaQuery("print");
@@ -34,26 +35,43 @@ const Home = ({ ...props }) => {
       </Pane>
       <Pane title={t("skills")}>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
-            {skills
-              .filter((i, index) => index % 2 === 0)
-              .map((i) => (
+          <Hidden smDown>
+            <Grid item xs={6}>
+              {skills
+                .filter((i, index) => index % 2 === 0)
+                .map((i) => (
+                  <SkillItem
+                    title={i.title}
+                    key={i.title}
+                    percent={i.percent}
+                  />
+                ))}
+            </Grid>
+            <Grid item xs={6}>
+              {skills
+                .filter((i, index) => index % 2 === 1)
+                .map((i) => (
+                  <SkillItem
+                    title={i.title}
+                    key={i.title}
+                    percent={i.percent}
+                  />
+                ))}
+            </Grid>
+          </Hidden>
+          <Hidden mdUp>
+            <Grid item xs={12}>
+              {skills.map((i) => (
                 <SkillItem title={i.title} key={i.title} percent={i.percent} />
               ))}
-          </Grid>
-          <Grid item xs={6}>
-            {skills
-              .filter((i, index) => index % 2 === 1)
-              .map((i) => (
-                <SkillItem title={i.title} key={i.title} percent={i.percent} />
-              ))}
-          </Grid>
+            </Grid>
+          </Hidden>
         </Grid>
       </Pane>
       <Pane title={t("clients")}>
         <Grid container spacing={3}>
           {clients.map((i) => (
-            <Grid item xs={6} lg={3} key={i.image}>
+            <Grid item xs={12} sm={6} lg={3} key={i.image}>
               <ClientCard image={i.image} title={i.title} />
             </Grid>
           ))}
@@ -62,17 +80,17 @@ const Home = ({ ...props }) => {
       <Resume />
       <Pane title={t("my_services")}>
         <Grid container spacing={2} justifyContent="space-around">
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <ServiceCard icon={faLaptopCode} title={t("web_development")}>
               {t("card_web_development")}
             </ServiceCard>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <ServiceCard icon={faApple} title={t("mobile_development")}>
               {t("card_mobile_development")}
             </ServiceCard>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <ServiceCard icon={faNodeJs} title={t("backend_development")}>
               {t("card_backend_development")}
             </ServiceCard>

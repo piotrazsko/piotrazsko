@@ -12,12 +12,12 @@ const Resume = ({ history, ...props }) => {
     <>
       <Pane verticalOffset={35} title={t("resume")}>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item md={6} xs={12}>
             <Box>
               <List title={t("resume_working")} items={itemsWorking(t)} />
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item md={6} xs={12}>
             <Box>
               <List title={t("resume_education")} items={itemsEducation(t)} />
             </Box>
