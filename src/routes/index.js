@@ -1,4 +1,4 @@
-import { Home, PDF } from "containers";
+import { Home, PDF, Invoice } from "containers";
 
 export const redirectAuthPath = "/auth";
 
@@ -18,6 +18,14 @@ const mainRoutes = [
     path: "/pdf",
     exact: true,
     component: PDF,
+    isPDF: true,
+    showProfile: false,
+    // layout: Tutorial,
+  },
+  {
+    path: "/invoice",
+    exact: true,
+    component: Invoice,
     isPDF: true,
     showProfile: false,
     // layout: Tutorial,
